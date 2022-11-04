@@ -25,6 +25,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = StoreException.class)
     public R serviceExceptionHandler(StoreException exception) {
+        exception.printStackTrace();
         return R.fail(exception.getErrorMessage());
     }
 
@@ -34,9 +35,10 @@ public class GlobalExceptionHandler {
      *
      * @return 全局统一响应
      */
-    @ExceptionHandler(Exception.class)
-    public R<String> otherExceptionHandler() {
-        CodeEnum codeEnum = CodeEnum.SUCCESS;
+    @ExceptionHandler(value = Exception.class)
+    public R<String> otherExceptionHandler(Exception exception) {
+        exception.printStackTrace();
+        CodeEnum codeEnum = CodeEnum.SYSTEM_ERROR;
         return R.fail(codeEnum.code(), codeEnum.msg());
     }
 }
