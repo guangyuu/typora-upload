@@ -73,6 +73,10 @@ mybatis-plus:
       logic-not-delete-value: 0
       logic-delete-value: 1
       id-type: auto
+typora:
+  upload:
+    service:
+      hosts: http://127.0.0.1:9508/api/preview # 上传文件返回预览地址
 ```
 
 ### 打包
