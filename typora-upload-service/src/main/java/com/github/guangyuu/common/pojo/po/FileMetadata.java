@@ -28,7 +28,7 @@ public class FileMetadata {
     /**
      * 文件标识
      */
-    private String fileUid;
+    private String uid;
     /**
      * 存储路径
      */
