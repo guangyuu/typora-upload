@@ -34,8 +34,6 @@ public class HttpUtils {
      * @return 预览地址
      */
     public static String doUpload(File file) {
-        System.setProperty("http.proxyHost", "localhost");
-        System.setProperty("http.proxyPort", "8888");
         try {
             // 请求地址
             String url = clientProperties.getHosts() + clientProperties.getUploadPath();
