@@ -20,6 +20,10 @@ public class SpaceUtils {
      */
     private static final String FILE_SEPARATOR = File.separator;
     /**
+     * 根路径
+     */
+    public static final String ROOT_PATH = "typora-upload";
+    /**
      * 一级目录
      */
     private static final String[] FIRST_LEVEL_DIRECTORY = new String[]{"00", "11", "22", "33", "44", "55", "66", "77", "88", "99"};
@@ -58,6 +62,7 @@ public class SpaceUtils {
         int var2 = random.nextInt(SECOND_LEVEL_DIRECTORY.length);
 
         return userHome + FILE_SEPARATOR +
+                ROOT_PATH + FILE_SEPARATOR +
                 year + FILE_SEPARATOR +
                 month + FILE_SEPARATOR +
                 day + FILE_SEPARATOR +
@@ -76,7 +81,7 @@ public class SpaceUtils {
      */
     private static void initDirectory(String year, String month, String day, String userHome) {
         for (String level1 : FIRST_LEVEL_DIRECTORY) {
-            String firstLevelPath = userHome + FILE_SEPARATOR + year + FILE_SEPARATOR + month + FILE_SEPARATOR + day + FILE_SEPARATOR + level1;
+            String firstLevelPath = userHome + FILE_SEPARATOR + ROOT_PATH + FILE_SEPARATOR + year + FILE_SEPARATOR + month + FILE_SEPARATOR + day + FILE_SEPARATOR + level1;
             for (String level2 : SECOND_LEVEL_DIRECTORY) {
                 String fullPath = firstLevelPath + FILE_SEPARATOR + level2;
                 File file = new File(fullPath);
