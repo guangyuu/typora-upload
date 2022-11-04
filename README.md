@@ -26,7 +26,8 @@
 
 ### 打包
 
-克隆项目到本地，终端进入typora-upload-client目录执行以下命令
+克隆项目到本地，根据实际配置好application.properties文件后，
+终端进入typora-upload-client目录执行以下命令
 
 ```bash
 mvn clean package -Dmaven.test.skip=true
@@ -76,8 +77,25 @@ mybatis-plus:
 
 ### 打包
 
-克隆项目到本地，终端进入typora-upload-service目录执行以下命令
+克隆项目到本地，根据实际情况修改application.yml配置文件后，终端进入typora-upload-service目录执行以下命令
 
 ```bash
 mvn clean package -Dmaven.test.skip=true
 ```
+
+
+## 部署
+先启动服务端
+- 服务端
+    > java -jar 打包后的jar包
+    
+    访问管理端,添加访问接口的用户。将配置的用户信息配置到客户端的application.properties文件中
+- 客户端
+打开Typora,找到【文件】-【偏好设置】-【图像】
+
+    上传服务:自定义命令
+    命令: java -jar 客户端jar包
+    
+
+
+
