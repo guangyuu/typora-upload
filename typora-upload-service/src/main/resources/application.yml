@@ -29,4 +29,4 @@ mybatis-plus:
 typora:
   upload:
     service:
-      previewPath: http://127.0.0.1:9508/api/preview
+      previewPath: http://127.0.0.1:9508/api/preview/
