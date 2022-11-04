@@ -3,6 +3,8 @@ package com.github.guangyuu.common.utils;
 import java.io.File;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalField;
 import java.util.Random;
 
 /**
@@ -55,8 +57,13 @@ public class SpaceUtils {
         LocalDate now = LocalDate.now(ZoneId.systemDefault());
         String year = String.valueOf(now.getYear());
         String month = String.valueOf(now.getMonthValue());
+        if (now.getMonthValue() <= 9) {
+            month = 0 + month;
+        }
         String day = String.valueOf(now.getDayOfMonth());
-
+        if (now.getDayOfMonth() <= 9) {
+            day = 0 + day;
+        }
         Random random = new Random();
         int var1 = random.nextInt(FIRST_LEVEL_DIRECTORY.length);
         int var2 = random.nextInt(SECOND_LEVEL_DIRECTORY.length);
