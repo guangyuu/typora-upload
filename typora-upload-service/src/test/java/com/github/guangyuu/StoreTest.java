@@ -4,8 +4,6 @@ import com.github.guangyuu.common.utils.SpaceUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.net.PortUnreachableException;
-
 /**
  * @Author Guangyu
  * @Date 2022/11/4
