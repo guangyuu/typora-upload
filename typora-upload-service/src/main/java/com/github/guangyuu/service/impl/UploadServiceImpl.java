@@ -92,7 +92,7 @@ public class UploadServiceImpl implements UploadService {
         try (InputStream inputStream = file.getInputStream()) {
             FastByteArrayOutputStream arrayOutputStream = IoUtil.read(file.getInputStream());
             byte[] bytes = arrayOutputStream.toByteArray();
-            FileUtils.writeFile(path, storeName, bytes);
+            FileUtils.writeFile(path, newFileName, bytes);
         } catch (IOException exception) {
             // 删除上传文件
             File file2 = new File(path, newFileName);
