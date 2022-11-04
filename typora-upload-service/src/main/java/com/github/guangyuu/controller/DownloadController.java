@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description 下载 前端控制器
  **/
 @RestController
-@RequestMapping("/download")
+@RequestMapping("/api/download")
 public class DownloadController {
 }

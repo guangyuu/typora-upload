@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description 操作 前端控制器
  **/
 @RestController
-@RequestMapping("/modify")
+@RequestMapping("/api/modify")
 public class ModifyController {
 }

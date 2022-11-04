@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description 预览 前端控制器
  **/
 @RestController
-@RequestMapping("/preview")
+@RequestMapping("/api/preview")
 public class PreviewController {
 }
