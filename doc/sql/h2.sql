@@ -18,4 +18,5 @@ CREATE TABLE `tb_sys_setting`
     `value`       VARCHAR(50) NOT NULL COMMENT '值',
     `desc`        VARCHAR(50)          DEFAULT NULL COMMENT '描述'
 );
-INSERT INTO tb_sys_setting(`name`, `value`, `desc`) values ('jwt.secret.key','c^3B1!4Y#8C$Dxy#','jwt签名密钥')
+INSERT INTO tb_sys_setting(`name`, `value`, `desc`) values ('jwt.secret.key','c^3B1!4Y#8C$Dxy#','jwt签名密钥');
+INSERT INTO tb_sys_setting(`name`, `value`, `desc`) values ('jwt.expire','360000','token过期时间');
