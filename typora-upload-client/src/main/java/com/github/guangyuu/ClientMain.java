@@ -19,12 +19,13 @@ public class ClientMain {
                 return;
             }
             String filePath = args[0];
-            if (StringUtils.isNotBlank(filePath)) {
+            if (StringUtils.isBlank(filePath)) {
                 return;
             }
             String preview = clientUploadService.upload(filePath);
             System.out.println(preview);
         } catch (BeansException e) {
+            e.printStackTrace();
             System.out.println("上传失败: " + e.getMessage());
         }
     }
