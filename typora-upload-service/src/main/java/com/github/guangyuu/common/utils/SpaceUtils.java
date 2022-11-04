@@ -38,11 +38,17 @@ public class SpaceUtils {
      * 生成目录
      */
     public static void generator() {
-        final String userHome = System.getProperty(PROPERTIES_USER_HOME);
-        final LocalDate now = LocalDate.now(ZoneId.systemDefault());
-        final String year = String.valueOf(now.getYear());
-        final String month = String.valueOf(now.getMonthValue());
-        final String day = String.valueOf(now.getDayOfMonth());
+        String userHome = System.getProperty(PROPERTIES_USER_HOME);
+        LocalDate now = LocalDate.now(ZoneId.systemDefault());
+        String year = String.valueOf(now.getYear());
+        String month = String.valueOf(now.getMonthValue());
+        if (now.getMonthValue() <= 9) {
+            month = 0 + month;
+        }
+        String day = String.valueOf(now.getDayOfMonth());
+        if (now.getDayOfMonth() <= 9) {
+            day = 0 + day;
+        }
         initDirectory(year, month, day, userHome);
     }
 
@@ -68,13 +74,7 @@ public class SpaceUtils {
         int var1 = random.nextInt(FIRST_LEVEL_DIRECTORY.length);
         int var2 = random.nextInt(SECOND_LEVEL_DIRECTORY.length);
 
-        return userHome + FILE_SEPARATOR +
-                ROOT_PATH + FILE_SEPARATOR +
-                year + FILE_SEPARATOR +
-                month + FILE_SEPARATOR +
-                day + FILE_SEPARATOR +
-                FIRST_LEVEL_DIRECTORY[var1] + FILE_SEPARATOR +
-                SECOND_LEVEL_DIRECTORY[var2];
+        return userHome + FILE_SEPARATOR + ROOT_PATH + FILE_SEPARATOR + year + FILE_SEPARATOR + month + FILE_SEPARATOR + day + FILE_SEPARATOR + FIRST_LEVEL_DIRECTORY[var1] + FILE_SEPARATOR + SECOND_LEVEL_DIRECTORY[var2];
 
     }
 
