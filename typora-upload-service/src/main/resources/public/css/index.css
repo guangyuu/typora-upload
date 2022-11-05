@@ -1,0 +1,70 @@
+body {
+    background-color: #f5f2f0;
+
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+
+}
+
+.user-form {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+table, td {
+    border: 1px solid #a1a1a1;
+
+}
+
+table {
+    text-align: center;
+    width: 1400px;
+    border-collapse: collapse;
+}
+
+.tr-header {
+    height: 30px;
+}
+
+.tr-body {
+    height: 26px;
+}
+
+.td-header {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.td-index {
+    width: 100px;
+}
+
+.td-username {
+    width: 140px;
+}
+
+.td-token {
+    word-wrap: break-word;
+}
+
+.td-operation {
+    width: 200px;
+}
+
+.td-body {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.btn-add {
+    border: 0;
+    background-color: #0ee062;
+    border-radius: 5px;
+    width: 100px;
+    height: 28px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}

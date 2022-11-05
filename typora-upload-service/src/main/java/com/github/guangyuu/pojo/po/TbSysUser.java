@@ -32,7 +32,7 @@ public class TbSysUser {
     /**
      * 删除标识(0 未删除 1 删除)
      */
-    @TableLogic(value = "del_flag", delval = "1")
+    @TableLogic(value = "0", delval = "1")
     private Integer delFlag;
     /**
      * 用户名

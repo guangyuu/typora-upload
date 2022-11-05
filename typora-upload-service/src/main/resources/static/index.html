@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/dialog.css">
+</head>
+<body>
+<div id="app" class="main-container">
+    <div class="user-form">
+        <button class="btn-add" @click="addDialogShow">新增</button>
+        <table>
+            <thead>
+            <tr class="tr-header">
+                <td class="td-header">序号</td>
+                <td class="td-header">用户名</td>
+                <td class="td-header">accessToken</td>
+                <td class="td-header">操作</td>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr class="tr-body" v-if="userList == null || userList.length == 0">
+                <td class="td-body" colspan="4">
+                    暂无数据
+                </td>
+            </tr>
+            <tr class="tr-body" v-if="userList!=null && userList.length > 0" v-for="(item,index) in userList">
+                <td class="td-body td-index">{{index + 1}}</td>
+                <td class="td-body td-username">{{item.username}}</td>
+                <td class="td-body td-token">{{item.accessToken}}</td>
+                <td class="td-body td-operation">
+                    <button @click="deleteUser(item.id)">删除</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <dialog ref="addDialog">
+        <label for="username">用户名: </label><input type="text" id="username" v-model="username">
+        <button @click="cancel">取消</button>
+        <button @click="addUser">保存</button>
+    </dialog>
+</div>
+</body>
+<script src="/plugin/vue/vue.min.js"></script>
+<script src="/plugin/axios/axios.min.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            username: '',
+            userList: []
+        },
+        mounted() {
+            this.list();
+        },
+        methods: {
+            addDialogShow() {
+                this.$refs.addDialog.showModal();
+            },
+            cancel() {
+                const dialog = this.$refs.addDialog;
+                dialog.close();
+                this.username = null;
+            },
+            addUser() {
+                const username = this.username;
+                if (username == null || username.length == 0 || username.trim().length == 0) {
+                    alert("用户名不能为空");
+                    return;
+                }
+                let data = {username: username};
+                axios.post(`/sys/user/add`, data).then(resp => {
+                    if (resp.data.code != 0) {
+                        alert(resp.data.message);
+                        return false;
+                    } else {
+                        this.cancel();
+                        this.username = null;
+                        alert(resp.data.message);
+                        this.list();
+                    }
+                });
+            },
+            deleteUser(id) {
+                axios.delete(`/sys/user/${id}`).then(resp => {
+                    if (resp.data.code != 0) {
+                        alert(resp.data.message);
+                        return false;
+                    } else {
+                        alert(resp.data.message);
+                        this.list();
+                    }
+                });
+            },
+            list() {
+                axios.get("/sys/user/list").then(resp => {
+                    if (resp.data.code != 0) {
+                        alert(resp.data.message);
+                        return false;
+                    }
+                    this.userList = resp.data.data;
+                });
+            },
+
+        },
+    });
+</script>
+</html>

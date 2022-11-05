@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @Author Guangyu
@@ -12,6 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  **/
 @EnableScheduling
 @MapperScan(basePackages = "com.github.guangyuu.mapper")
+@EnableTransactionManagement
 @SpringBootApplication
 public class TyporaUploadServiceApplication {
     public static void main(String[] args) {
