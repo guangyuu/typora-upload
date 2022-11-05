@@ -44,15 +44,11 @@ public class JwtUtils {
     /**
      * 解析Token
      *
-     * @param token     令牌
-     * @param secretKey 密钥
+     * @param token 令牌
      * @return 用户名
      */
-    public static String parseToken(String token, String secretKey) {
-        if (verify(token, secretKey)) {
-            JWT jwt = JWTUtil.parseToken(token);
-            return String.valueOf(jwt.getPayload("username"));
-        }
-        return null;
+    public static String parseToken(String token) {
+        JWT jwt = JWTUtil.parseToken(token);
+        return String.valueOf(jwt.getPayload("username"));
     }
 }
