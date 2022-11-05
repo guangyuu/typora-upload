@@ -16,6 +16,7 @@ spring:
       settings:
         web-admin-password: dev
         trace: true
+        web-allow-others: true
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
