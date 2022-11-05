@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Description 预览 前端控制器
  **/
 @RestController
-@RequestMapping("/api/preview")
+@RequestMapping("/api/typora/preview")
 public class PreviewController {
     @Autowired
     private PreviewService previewService;

@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @Description 上传 前端控制器
  **/
 @RestController
-@RequestMapping("/api/upload")
+@RequestMapping("/api/typora/upload")
 public class UploadController {
 
     @Autowired
