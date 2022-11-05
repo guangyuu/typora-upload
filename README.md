@@ -41,7 +41,7 @@ mvn clean package -Dmaven.test.skip=true
 
 h2数据库监控面板访问地址:http://localhost:9508/h2-console
 
-h2数据库建表语句再doc/sql目录下
+**服务端部署好后,打开h2数据库的监控面板,执行建表语句。h2数据库建表语句再doc/sql目录下** 
 
 ```yaml
 server:
