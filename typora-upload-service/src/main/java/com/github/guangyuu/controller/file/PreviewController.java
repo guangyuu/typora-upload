@@ -1,4 +1,4 @@
-package com.github.guangyuu.controller;
+package com.github.guangyuu.controller.file;
 
 import com.github.guangyuu.service.PreviewService;
 import org.springframework.beans.factory.annotation.Autowired;

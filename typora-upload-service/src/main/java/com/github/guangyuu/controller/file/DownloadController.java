@@ -1,4 +1,4 @@
-package com.github.guangyuu.controller;
+package com.github.guangyuu.controller.file;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
